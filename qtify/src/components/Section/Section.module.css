@@ -28,15 +28,18 @@
 
 .sliderContainer {
   position: relative;
-  display: flex;
-  align-items: center;
+  overflow: hidden;
 }
 
 .grid {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  display: flex;
   gap: 20px;
-  width: 100%;
+  width: max-content;
+  transition: transform 0.3s ease;
+}
+
+.grid > * {
+  flex: 0 0 160px;
 }
 
 .allGrid {

@@ -36,15 +36,9 @@ function Section() {
       });
   }, []);
 
-  const visibleTopAlbums = topAlbums.slice(
-    topStart,
-    topStart + 7
-  );
+  const visibleTopAlbums = topAlbums;
 
-  const visibleNewAlbums = newAlbums.slice(
-    newStart,
-    newStart + 7
-  );
+const visibleNewAlbums = newAlbums;
 
   const handleTopNext = () => {
     if (topStart + 7 < topAlbums.length) {
@@ -74,9 +68,14 @@ function Section() {
         </div>
 
         <div className={styles.sliderContainer}>
-          <div className={styles.grid}>
+          <div
+            className={styles.grid}
+            style={{
+                transform: `translateX(-${topStart * 180}px)`,
+            }}
+            >
             {visibleTopAlbums.map((album) => (
-              <Card
+            <Card
                 key={album.id}
                 image={album.image}
                 follows={album.follows}
@@ -109,8 +108,13 @@ function Section() {
         </div>
 
         {showAll ? (
-          <div className={styles.allGrid}>
-            {newAlbums.map((album) => (
+          <div
+            className={styles.grid}
+            style={{
+                transform: `translateX(-${topStart * 180}px)`,
+            }}
+            >
+            {visibleTopAlbums.map((album) => (
               <Card
                 key={album.id}
                 image={album.image}
