@@ -1,0 +1,32 @@
+.section {
+  background-color: #121212;
+  padding: 20px;
+  margin: 20px 50px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header h2 {
+  color: white;
+  font-size: 20px;
+  margin: 0;
+}
+
+.header button {
+  background: none;
+  border: none;
+  color: #34c94b;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 20px;
+}
