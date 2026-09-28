@@ -28,18 +28,16 @@
 
 .sliderContainer {
   position: relative;
+  display: flex;
+  align-items: center;
   overflow: hidden;
 }
 
 .grid {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
   gap: 20px;
-  width: max-content;
-  transition: transform 0.3s ease;
-}
-
-.grid > * {
-  flex: 0 0 160px;
+  width: 100%;
 }
 
 .allGrid {
@@ -47,6 +45,8 @@
   grid-template-columns: repeat(7, 1fr);
   gap: 20px;
 }
+
+/* Next button */
 
 .nextButton {
   position: absolute;
@@ -65,4 +65,39 @@
 
   font-size: 24px;
   cursor: pointer;
+}
+
+/* ================= SONGS ================= */
+
+.songGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.songCard {
+  background-color: #181818;
+  border-radius: 8px;
+  overflow: hidden;
+  padding-bottom: 12px;
+}
+
+.songCard img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.songCard p {
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 10px 12px 4px;
+}
+
+.songCard span {
+  color: #aaaaaa;
+  font-size: 12px;
+  margin: 0 12px;
 }

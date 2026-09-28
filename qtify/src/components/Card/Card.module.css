@@ -20,13 +20,17 @@
   position: absolute !important;
   bottom: 8px;
   left: 8px;
+
   background-color: white !important;
   color: black !important;
+
   font-size: 10px !important;
 }
 
 .card p {
   margin: 6px 0 0;
+
   color: white;
+
   font-size: 12px;
 }

@@ -6,7 +6,10 @@ function Card({ image, follows, title }) {
   return (
     <div className={styles.card}>
       <div className={styles.imageContainer}>
-        <img src={image} alt={title} />
+        <img
+          src={image}
+          alt={title}
+        />
 
         <Chip
           label={`${follows} Follows`}
