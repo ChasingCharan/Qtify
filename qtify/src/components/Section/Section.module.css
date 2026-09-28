@@ -34,10 +34,14 @@
 }
 
 .grid {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  display: flex;
   gap: 20px;
-  width: 100%;
+  width: max-content;
+  transition: transform 0.3s ease;
+}
+
+.grid > * {
+  flex: 0 0 160px;
 }
 
 .allGrid {
@@ -53,16 +57,12 @@
   right: -15px;
   top: 50%;
   transform: translateY(-50%);
-
   width: 40px;
   height: 40px;
-
   border: none;
   border-radius: 50%;
-
   background-color: white;
   color: black;
-
   font-size: 24px;
   cursor: pointer;
 }

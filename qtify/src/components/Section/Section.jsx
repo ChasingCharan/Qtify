@@ -59,15 +59,8 @@ function Section() {
    * We show 7 albums at a time in the slider.
    * The slider moves 2 cards at a time.
    */
-  const visibleTopAlbums = topAlbums.slice(
-    topStart,
-    topStart + 7
-  );
-
-  const visibleNewAlbums = newAlbums.slice(
-    newStart,
-    newStart + 7
-  );
+    const visibleTopAlbums = topAlbums;
+    const visibleNewAlbums = newAlbums;
 
   const handleTopNext = () => {
     if (topStart + 7 < topAlbums.length) {
@@ -109,15 +102,20 @@ function Section() {
           </div>
         ) : (
           <div className={styles.sliderContainer}>
-            <div className={styles.grid}>
-              {visibleTopAlbums.map((album) => (
-                <Card
-                  key={album.id}
-                  image={album.image}
-                  follows={album.follows}
-                  title={album.title}
-                />
-              ))}
+            <div
+                className={styles.grid}
+                style={{
+                    transform: `translateX(-${topStart * 180}px)`,
+                }}
+                >
+                {visibleTopAlbums.map((album) => (
+                    <Card
+                    key={album.id}
+                    image={album.image}
+                    follows={album.follows}
+                    title={album.title}
+                    />
+                ))}
             </div>
 
             <button
@@ -157,15 +155,20 @@ function Section() {
           </div>
         ) : (
           <div className={styles.sliderContainer}>
-            <div className={styles.grid}>
-              {visibleNewAlbums.map((album) => (
-                <Card
-                  key={album.id}
-                  image={album.image}
-                  follows={album.follows}
-                  title={album.title}
-                />
-              ))}
+            <div
+                className={styles.grid}
+                style={{
+                    transform: `translateX(-${newStart * 180}px)`,
+                }}
+                >
+                {visibleNewAlbums.map((album) => (
+                    <Card
+                    key={album.id}
+                    image={album.image}
+                    follows={album.follows}
+                    title={album.title}
+                    />
+                ))}
             </div>
 
             <button
